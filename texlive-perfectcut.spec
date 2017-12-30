@@ -5,8 +5,8 @@
 # catalog-license lppl1.3
 # catalog-version 1.9
 Name:		texlive-perfectcut
-Version:	1.9
-Release:	6
+Version:	2.2
+Release:	1
 Summary:	Brackets whose size adjusts to the nesting
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/perfectcut
