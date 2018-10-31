@@ -6,7 +6,7 @@
 # catalog-version 1.9
 Name:		texlive-perfectcut
 Version:	2.2
-Release:	1
+Release:	2
 Summary:	Brackets whose size adjusts to the nesting
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/perfectcut
