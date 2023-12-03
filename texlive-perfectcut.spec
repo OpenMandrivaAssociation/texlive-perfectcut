@@ -1,6 +1,6 @@
 Name:		texlive-perfectcut
-Version:	54080
-Release:	2
+Version:	67201
+Release:	1
 Summary:	Brackets whose size adjusts to the nesting
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/perfectcut
