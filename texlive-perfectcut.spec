@@ -3,7 +3,7 @@ Version:	67201
 Release:	1
 Summary:	Brackets whose size adjusts to the nesting
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/perfectcut
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/perfectcut
 License:	LPPL1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/perfectcut.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/perfectcut.doc.r%{version}.tar.xz
