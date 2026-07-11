@@ -1,48 +1,29 @@
-Name:		texlive-perfectcut
-Version:	67201
-Release:	1
-Summary:	Brackets whose size adjusts to the nesting
+%global tl_name perfectcut
+%global tl_revision 79618
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	2.3
+Release:	%{tl_revision}.1
+Summary:	Nested delimiters that consistently grow regardless of the contents
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/perfectcut
-License:	LPPL1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/perfectcut.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/perfectcut.doc.r%{version}.tar.xz
+License:	lppl1.3
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/perfectcut.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/perfectcut.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package defines the command \perfectcut#1#2 which displays
-a bracket <#1||#2>. Its effect is to determine the size of the
-bracket depending on the number of nested \perfectcut
-(regardless of the contents). The command is intended for use:
-In proof theory, for term notations of sequent calculus, In
-computer science, for the modeling of abstract machines. The
-package also offers a reimplementation of \big, \bigg, etc.,
-into arbitrary-size variants.
+This package defines the command \perfectcut#1#2 which displays a
+bracket <#1||#2>. Various other delimiters are similarly defined
+(parentheses, square brackets ...). The effect of these commands is to
+let the delimiters grow according to the number of nested
+\perfectcommands (regardless of the size of the contents). The package
+was originally intended for solving a notational issue for direct-style
+continuation calculi in proof theory. For general use, the package also
+defines commands for defining other sorts of delimiters which will
+behave in the same way (see example in the documentation). The package
+also offers a robust reimplementation of \big, \bigg, etc.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/perfectcut/perfectcut.sty
-%doc %{_texmfdistdir}/doc/latex/perfectcut/README
-%doc %{_texmfdistdir}/doc/latex/perfectcut/perfectcut.pdf
-%doc %{_texmfdistdir}/doc/latex/perfectcut/perfectcut.tex
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc %{buildroot}%{_texmfdistdir}
